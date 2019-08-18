@@ -45,10 +45,7 @@ void initGPIO(void){
 	//Write your logic here
 	pinMode(1, PWM_OUTPUT);
 	softPwmCreate(1,0,60);
-	
-	
-	
-		
+			
 	printf("LEDS done\n");
 	
 	//Set up the Buttons
@@ -58,13 +55,12 @@ void initGPIO(void){
 	}
 	//Attach interrupts to Buttons
 	//Write your logic here
-	wiringPiISR(5, INT_EDGE_RISING, &hourInc);
-	wiringPiISR(30, INT_EDGE_RISING, &minInc);
+	wiringPiISR(30, INT_EDGE_RISING, &hourInc);
+	wiringPiISR(5, INT_EDGE_RISING, &minInc);
 	
 	printf("BTNS done\n");
 	printf("Setup done\n");
 }
-
 
 /*
  * The main function
